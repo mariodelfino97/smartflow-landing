@@ -19,7 +19,7 @@
       --white:#ffffff;--radius:20px;
     }
     html{scroll-behavior:smooth}
-    body{font-family:'LTSaeada',sans-serif;color:var(--dark);background:var(--white);overflow-x:hidden;max-width:480px;margin:0 auto}
+    body{font-family:'LTSaeada',sans-serif;color:var(--dark);background:var(--white);overflow-x:hidden}
 
     /* ── NAV ── */
     nav{position:absolute;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;display:flex;justify-content:space-between;align-items:center;padding:1rem 1.4rem;z-index:10}
@@ -30,7 +30,7 @@
 
     /* ── HERO ── */
     #hero{background:var(--orange);position:relative;overflow:hidden;padding-bottom:2.2rem}
-    .hero-top{padding:5rem 1.4rem 1.6rem}
+    .hero-top{padding:5rem 1.4rem 1.6rem;max-width:480px;margin:0 auto}
     /* Wrapper com a proporção exata da foto no Figma (296x239) - garante que a marca d'água escale junto */
     .hero-photo-frame{
       position:relative;
@@ -55,7 +55,7 @@
     .btn-apple{background:var(--dark)}
 
     /* Visual hero: foto + cards (marca d'água fica na section, não aqui) */
-    .hero-visual{position:relative;margin-top:1.5rem;padding-bottom:1rem}
+    .hero-visual{position:relative;margin:1.5rem auto 0;padding-bottom:1rem;max-width:480px}
 
     /* Foto preenche 100% do wrapper hero-photo-frame */
     .hero-photo{
@@ -95,19 +95,18 @@
     .tx-val{font-weight:800;font-size:.92rem;color:var(--dark);white-space:nowrap}
 
     /* ── SEÇÃO 2 ── */
-    #gestao{background:var(--white);padding:3.5rem 1.4rem 2rem;text-align:center}
+    #gestao{background:var(--white);padding-top:3.5rem;padding-bottom:2rem;padding-left:max(1.4rem, calc((100% - 480px)/2 + 1.4rem));padding-right:max(1.4rem, calc((100% - 480px)/2 + 1.4rem));text-align:center}
     #gestao h2{font-size:2.1rem;font-weight:900;line-height:1.1;color:var(--dark);margin-bottom:.9rem}
     #gestao .desc{font-size:.93rem;line-height:1.7;color:#555;margin-bottom:1rem}
     #gestao .desc2{font-size:.95rem;line-height:1.65;color:var(--dark);margin-bottom:2rem}
     #gestao .desc2 strong{font-weight:800}
     .app-showcase{position:relative;margin:0 auto 2rem;width:100%}
     .lime-bg{background:var(--lime);border-radius:26px;width:86%;margin:0 auto;padding:1.8rem 1.2rem 0;display:flex;justify-content:center;position:relative;overflow:visible}
-    .app-screenshot{width:78%;border-radius:22px 22px 0 0;box-shadow:0 16px 50px rgba(2,27,54,.2);display:block}
-    .seta-wrap{position:absolute;right:-8px;bottom:-28px;width:100px}
-    .seta-wrap svg{width:100%;height:auto}
+    .app-photo-frame{position:relative;width:78%;aspect-ratio:245/398}
+    .app-screenshot{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;border-radius:22px 22px 0 0;box-shadow:0 16px 50px rgba(2,27,54,.2);display:block}
 
     /* ── SEÇÃO 3 ── */
-    #features{background:var(--dark);padding:3rem 1.4rem;text-align:left}
+    #features{background:var(--dark);padding-top:3rem;padding-bottom:3rem;padding-left:max(1.4rem, calc((100% - 480px)/2 + 1.4rem));padding-right:max(1.4rem, calc((100% - 480px)/2 + 1.4rem));text-align:left}
     #features h2{font-size:1.9rem;font-weight:900;color:var(--white);text-align:center;margin-bottom:1.6rem}
     .feature-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:1.3rem;margin-bottom:1rem}
     .feature-icon{width:58px;height:58px;margin-bottom:.9rem}
@@ -116,7 +115,7 @@
     .feature-card p{font-size:.88rem;line-height:1.6;color:rgba(255,255,255,.7)}
 
     /* ── SEÇÃO 4 ── */
-    #whatsapp{background:var(--white);padding:3.5rem 1.4rem 2.5rem;text-align:center}
+    #whatsapp{background:var(--white);padding-top:3.5rem;padding-bottom:2.5rem;padding-left:max(1.4rem, calc((100% - 480px)/2 + 1.4rem));padding-right:max(1.4rem, calc((100% - 480px)/2 + 1.4rem));text-align:center}
     #whatsapp h2{font-size:2.1rem;font-weight:900;line-height:1.1;color:var(--dark);margin-bottom:.9rem}
     #whatsapp .desc{font-size:.95rem;line-height:1.65;color:var(--dark);margin-bottom:2rem}
     #whatsapp .desc strong{font-weight:800}
@@ -131,7 +130,7 @@
     .bubble-3{bottom:18px;right:0}
 
     /* ── SEÇÃO 5 ── */
-    #all-in-one{background:var(--dark);padding:3rem 1.4rem;position:relative;overflow:hidden}
+    #all-in-one{background:var(--dark);padding-top:3rem;padding-bottom:3rem;padding-left:max(1.4rem, calc((100% - 480px)/2 + 1.4rem));padding-right:max(1.4rem, calc((100% - 480px)/2 + 1.4rem));position:relative;overflow:hidden}
     .deco-tl{position:absolute;top:-65px;left:-85px;width:220px;height:220px;border-radius:50%;background:var(--blue);opacity:.5}
     .deco-br{position:absolute;bottom:-85px;right:-65px;width:210px;height:210px;border-radius:50%;background:var(--blue);opacity:.5}
     #all-in-one h2{font-size:1.9rem;font-weight:900;color:var(--white);text-align:center;margin-bottom:1.6rem;position:relative;z-index:1}
@@ -153,11 +152,11 @@
     .carousel-dots{display:flex;justify-content:center;gap:6px;margin:1.1rem 0 1.8rem}
     .dot{width:8px;height:8px;border-radius:50%;background:#cbd5e1;transition:background .2s,width .2s;cursor:pointer;border:none;padding:0}
     .dot.active{background:var(--blue);width:22px;border-radius:4px}
-    .btn-primary{display:inline-block;background:var(--blue);color:white;font-weight:800;font-size:1rem;padding:.85rem 2.5rem;border-radius:50px;text-decoration:none;transition:transform .15s,box-shadow .15s}
+    .btn-primary{display:inline-block;background:var(--blue);color:white;font-weight:800;font-size:1rem;padding:.85rem 2.5rem;border-radius:50px;text-decoration:none;transition:transform .15s,box-shadow .15s;position:relative;z-index:5}
     .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(31,103,177,.35)}
 
     /* ── SEÇÃO 7 ── */
-    #cta{background:var(--orange);padding:3rem 1.4rem 0;text-align:center;position:relative;overflow:hidden}
+    #cta{background:var(--orange);padding-top:3rem;padding-bottom:0;padding-left:max(1.4rem, calc((100% - 480px)/2 + 1.4rem));padding-right:max(1.4rem, calc((100% - 480px)/2 + 1.4rem));text-align:center;position:relative;overflow:hidden}
     #cta h2{font-size:2.3rem;font-weight:900;color:var(--dark);margin-bottom:.9rem}
     #cta .desc{font-size:.95rem;line-height:1.65;color:var(--dark);margin-bottom:1.8rem}
     #cta .desc strong{font-weight:800}
@@ -169,7 +168,7 @@
     .cta-imagem{width:68%;display:block;position:relative;z-index:2;object-fit:cover}
 
     /* ── RODAPÉ ── */
-    footer{background:var(--dark);padding:2.5rem 1.4rem 2rem;text-align:center}
+    footer{background:var(--dark);padding-top:2.5rem;padding-bottom:2rem;padding-left:max(1.4rem, calc((100% - 480px)/2 + 1.4rem));padding-right:max(1.4rem, calc((100% - 480px)/2 + 1.4rem));text-align:center}
     .footer-logo{margin-bottom:.55rem}
     .footer-logo img{height:36px;width:auto}
     .footer-tagline{font-size:.88rem;color:rgba(255,255,255,.6);line-height:1.6;margin-bottom:1.4rem}
@@ -298,10 +297,9 @@
   <p class="desc2 reveal">O SmartFlow+ te ajuda a se <strong>organizar e acompanhar os seus gastos. Simples de usar</strong> e <strong>100% seguro.</strong></p>
   <div class="app-showcase reveal">
     <div class="lime-bg">
+      <div class="app-photo-frame">
       <img src="assets/gestao-app-showcase.png" alt="App SmartFlow+" class="app-screenshot"/>
-      <div class="seta-wrap"><svg width="1480" height="603" viewBox="0 0 1480 603" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1163.78 55.8282L1224.5 122.348C1067.2 219.104 898.812 296.719 723.484 353.256C498.793 425.711 264.614 463.155 27.4812 464.542L0 464.703V602.371L27.2553 602.758C38.0832 602.919 48.8627 603 59.6906 603C300.615 603 538.086 564.588 765.924 488.731C957.808 424.84 1140.14 335.082 1308.29 221.781L1363.72 296.96L1480 0L1163.8 55.8282H1163.78Z" fill="#021B36"/>
-</svg></div>
+      </div>
     </div>
   </div>
   <a href="https://play.google.com/store/apps/details?id=com.embarcadero.SmartFlow" class="btn-primary reveal" target="_blank">Baixar agora</a>
