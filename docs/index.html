@@ -31,14 +31,21 @@
     /* ── HERO ── */
     #hero{background:var(--orange);position:relative;overflow:hidden;padding-bottom:2.2rem}
     .hero-top{padding:5rem 1.4rem 1.6rem}
-    .marca-dagua{position:absolute;left:8.71px;top:-181.63px;width:442.6px;height:497.61px;opacity:1;pointer-events:none;z-index:1}
+    /* Wrapper com a proporção exata da foto no Figma (296x239) - garante que a marca d'água escale junto */
+    .hero-photo-frame{
+      position:relative;
+      width:75%;max-width:340px;
+      aspect-ratio:296/239;
+      margin:0 auto;
+    }
+    .marca-dagua{position:absolute;left:-16.53%;top:-21.85%;width:158.07%;height:161.61%;opacity:1;pointer-events:none;z-index:1}
     .marca-dagua svg{width:100%;height:100%;display:block}
     #hero h1{font-size:2.5rem;font-weight:900;line-height:1.05;color:var(--dark);text-align:center;margin-bottom:1rem;position:relative;z-index:1}
     .hero-sub{font-size:0.93rem;line-height:1.65;text-align:center;color:var(--dark);margin-bottom:1.6rem;position:relative;z-index:1}
     .hero-sub strong{font-weight:800}
 
     /* Botões store */
-    .btn-store{display:flex;align-items:center;gap:0.6rem;width:100%;max-width:190px;margin:0 auto 0.75rem;padding:0.7rem 1.1rem;border-radius:50px;text-decoration:none;color:white;font-weight:800;font-size:0.85rem;transition:transform .15s,box-shadow .15s;position:relative;z-index:1}
+    .btn-store{display:flex;align-items:center;gap:0.6rem;width:100%;max-width:190px;margin:0 auto 0.75rem;padding:0.7rem 1.1rem;border-radius:50px;text-decoration:none;color:white;font-weight:800;font-size:0.85rem;transition:transform .15s,box-shadow .15s;position:relative;z-index:5}
     .btn-store:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
     .btn-store .store-icon{width:26px;height:26px;flex-shrink:0;display:flex;align-items:center}
     .btn-store .store-icon svg{width:100%;height:100%}
@@ -50,13 +57,11 @@
     /* Visual hero: foto + cards (marca d'água fica na section, não aqui) */
     .hero-visual{position:relative;margin-top:1.5rem;padding-bottom:1rem}
 
-    /* Foto centralizada - proporção real do asset (564x428) */
+    /* Foto preenche 100% do wrapper hero-photo-frame */
     .hero-photo{
       position:relative;
       display:block;
-      width:75%;max-width:280px;
-      aspect-ratio:564/428;
-      margin:0 auto;
+      width:100%;height:100%;
       border-radius:20px;
       object-fit:cover;object-position:top center;
       z-index:2;
@@ -237,10 +242,12 @@
   </div>
 
   <div class="hero-visual">
+    <div class="hero-photo-frame">
     <div class="marca-dagua"><svg width="658" height="552" viewBox="0 0 658 552" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M657.7 -187.86C658.16 120.61 657.99 247.75 657.41 253.93C657.35 254.55 656.64 260.86 656.53 269.12C656.5 271.36 656.5 271.76 656.48 273.92C656.42 279.83 655.43 287.63 655.41 287.82C649.48 344.66 598.05 389.13 535.43 389.13C472.81 389.13 421.38 344.66 415.5 287.82C414.19 278.97 414.28 272.19 414.38 269.12C414.38 262.39 414.33 255.72 414.33 248.99H414.52V158.17C414.37 153.67 414.28 149.22 414.13 144.72C412.72 133.94 403.72 125.72 393.06 125.18C381.63 124.59 371.07 133.05 369.51 144.72C369.49 151.32 369.48 157.91 369.46 164.51C369.27 252.31 369.07 340.12 368.88 427.92C368.88 476.25 342.12 521.76 298.19 541.35C282.96 548.13 266.22 551.89 248.76 551.89C225.5 551.89 203.47 545.21 184.68 533.59C149.5 511.82 129.12 472.25 128.05 430.7L128.24 403.79H128.34L128.49 386.53H128.39C128.49 385 128.49 378.96 124.21 373.57C119.05 367.09 111.71 366.5 110.49 366.4H0V267.32H66.66C89.58 267.42 112.49 267.52 135.41 267.62C154.68 268.51 183.38 273.75 201.77 295.47C221.38 318.57 222.54 352.51 223.86 391.19C224.1 398.12 224.01 403.7 223.86 408.7H223.81V433.98C225.9 444.91 235.58 452.93 246.77 453.12C258.25 453.27 268.37 445.16 270.46 433.98C270.46 423.94 270.46 413.85 270.51 403.81H270.56V159.99C270.56 154.8 270.61 149.6 270.61 144.41C270.51 141.34 270.42 134.57 271.73 125.71C277.67 68.87 329.14 24.4 391.86 24.4C454.58 24.4 506.1 68.87 512.03 125.71C512.57 131.05 512.95 135.16 513.1 139.61C513.14 141.61 513.15 143.16 513.15 143.96V144.4C513.15 146.89 512.92 161.06 512.86 164.93V249.02H513.1C513.1 255.6 513.15 262.23 513.15 268.81C514.71 280.48 525.22 288.94 536.65 288.35C547.26 287.81 556.26 279.59 557.67 268.81C557.86 262.08 558.06 255.36 558.25 248.63C558.33 103.15 558.41 -42.33 558.49 -187.81H657.69L657.7 -187.86Z" fill="#1F67B1"/>
 </svg></div>
     <img src="assets/hero-foto-pessoa.png" alt="Pessoa usando celular" class="hero-photo"/>
+    </div>
     <div class="tx-cards-wrap">
       <div class="tx-card">
         <div class="tx-icon"><svg width="937" height="937" viewBox="0 0 937 937" fill="none" xmlns="http://www.w3.org/2000/svg">
