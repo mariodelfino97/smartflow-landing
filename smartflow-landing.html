@@ -4,7 +4,13 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SmartFlow+ — Controle o seu dinheiro conversando</title>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    @font-face{font-family:'Fredoka';font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/fredoka-400.woff2') format('woff2')}
+    @font-face{font-family:'Fredoka';font-style:normal;font-weight:600;font-display:swap;src:url('assets/fonts/fredoka-600.woff2') format('woff2')}
+    @font-face{font-family:'Fredoka';font-style:normal;font-weight:700;font-display:swap;src:url('assets/fonts/fredoka-700.woff2') format('woff2')}
+    @font-face{font-family:'Fredoka';font-style:normal;font-weight:800;font-display:swap;src:url('assets/fonts/fredoka-700.woff2') format('woff2')}
+    @font-face{font-family:'Fredoka';font-style:normal;font-weight:900;font-display:swap;src:url('assets/fonts/fredoka-700.woff2') format('woff2')}
+  </style>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{
@@ -12,7 +18,7 @@
       --white:#ffffff;--radius:20px;
     }
     html{scroll-behavior:smooth}
-    body{font-family:'Nunito',sans-serif;color:var(--dark);background:var(--white);overflow-x:hidden;max-width:480px;margin:0 auto}
+    body{font-family:'Fredoka',sans-serif;color:var(--dark);background:var(--white);overflow-x:hidden;max-width:480px;margin:0 auto}
 
     /* ── NAV ── */
     nav{position:absolute;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;display:flex;justify-content:space-between;align-items:center;padding:1rem 1.4rem;z-index:10}
@@ -22,16 +28,16 @@
     .hamburger span{display:block;width:26px;height:2.5px;background:var(--dark);border-radius:2px}
 
     /* ── HERO ── */
-    #hero{background:var(--orange);position:relative;overflow:hidden;padding-bottom:0}
+    #hero{background:var(--orange);position:relative;overflow:hidden;padding-bottom:2.2rem}
     .hero-top{padding:5rem 1.4rem 1.6rem}
-    .marca-dagua{position:absolute;right:-70px;top:-30px;width:46%;opacity:0.12;pointer-events:none;z-index:0}
+    .marca-dagua{display:none;position:absolute;right:-70px;top:-30px;width:46%;opacity:0.12;pointer-events:none;z-index:0}
     .marca-dagua svg{width:100%;height:auto;display:block}
     #hero h1{font-size:2.5rem;font-weight:900;line-height:1.05;color:var(--dark);text-align:center;margin-bottom:1rem;position:relative;z-index:1}
     .hero-sub{font-size:0.93rem;line-height:1.65;text-align:center;color:var(--dark);margin-bottom:1.6rem;position:relative;z-index:1}
     .hero-sub strong{font-weight:800}
 
     /* Botões store */
-    .btn-store{display:flex;align-items:center;gap:0.85rem;width:100%;max-width:320px;margin:0 auto 0.75rem;padding:0.85rem 1.8rem;border-radius:50px;text-decoration:none;color:white;font-weight:800;font-size:1rem;transition:transform .15s,box-shadow .15s;position:relative;z-index:1}
+    .btn-store{display:flex;align-items:center;gap:0.6rem;width:100%;max-width:190px;margin:0 auto 0.75rem;padding:0.7rem 1.1rem;border-radius:50px;text-decoration:none;color:white;font-weight:800;font-size:0.85rem;transition:transform .15s,box-shadow .15s;position:relative;z-index:1}
     .btn-store:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
     .btn-store .store-icon{width:26px;height:26px;flex-shrink:0;display:flex;align-items:center}
     .btn-store .store-icon svg{width:100%;height:100%}
@@ -41,48 +47,55 @@
     .btn-apple{background:var(--dark)}
 
     /* Visual hero: foto + círculos + cards */
-    .hero-visual{position:relative;height:520px;margin-top:1.5rem}
+    .hero-visual{position:relative;margin-top:1.5rem;padding-bottom:1rem}
 
-    /* Círculo azul grande à direita/topo */
+    /* Cápsula azul vertical atrás da foto, à direita (aparece por cima e por baixo) */
     .hero-circle-r{
-      position:absolute;top:-30px;right:-70px;
-      width:240px;height:240px;border-radius:50%;background:var(--blue);
+      position:absolute;top:-55px;right:-60px;
+      width:150px;height:480px;border-radius:75px;background:var(--blue);
       z-index:1
     }
-    /* Círculo azul menor à esquerda/baixo */
+    /* Retângulo azul saindo pela esquerda, na altura do card Supermercado */
+    .hero-rect-l{
+      position:absolute;left:-40px;top:150px;
+      width:110px;height:80px;border-radius:14px;background:var(--blue);
+      z-index:1
+    }
+    /* Círculo azul embaixo, centralizado, atrás do card Farmácia */
     .hero-circle-l{
-      position:absolute;bottom:100px;left:-55px;
-      width:180px;height:180px;border-radius:50%;background:var(--blue);
+      position:absolute;bottom:-60px;left:50%;transform:translateX(-50%);
+      width:170px;height:170px;border-radius:50%;background:var(--blue);
       z-index:1
     }
 
-    /* Foto centralizada */
+    /* Foto centralizada - proporção real do asset (564x428) */
     .hero-photo{
-      position:absolute;
-      left:50%;top:0;
-      transform:translateX(-50%);
+      position:relative;
+      display:block;
       width:75%;max-width:280px;
-      height:360px;
+      aspect-ratio:564/428;
+      margin:0 auto;
       border-radius:20px;
       object-fit:cover;object-position:top center;
       z-index:2;
-      display:block;
     }
 
-    /* Cards de transação abaixo da foto */
+    /* Cards de transação sobrepondo a base da foto */
     .tx-cards-wrap{
-      position:absolute;
-      bottom:0;left:0;right:0;
+      position:relative;
       z-index:3;
-      display:flex;flex-direction:column;gap:10px;
-      padding:0 1rem 1rem;
+      display:flex;flex-direction:column;gap:16px;
+      padding:0;
+      margin-top:-54px;
     }
     .tx-card{
-      background:white;border-radius:14px;
+      background:white;border-radius:10px;
       padding:.65rem 1rem;
       display:flex;align-items:center;gap:.7rem;
       box-shadow:0 6px 24px rgba(2,27,54,.14);
+      width:267px;margin-left:40px;
     }
+    .tx-card:nth-child(2){margin-left:83px}
     .tx-icon{
       width:40px;height:40px;border-radius:10px;
       overflow:hidden;flex-shrink:0;
@@ -224,7 +237,7 @@
 </svg></div>
 
   <div class="hero-top">
-    <h1 class="reveal">Controle o seu dinheiro conversando</h1>
+    <h1 class="reveal">Controle o<br>seu dinheiro<br>conversando</h1>
     <p class="hero-sub reveal"><strong>Registre suas entradas e saídas direto pelo WhatsApp.</strong> Transforme mensagens simples em organização financeira de um jeito rápido, seguro e sem esforço.</p>
     <a href="https://play.google.com/store/apps/details?id=com.embarcadero.SmartFlow" class="btn-store btn-google reveal" target="_blank">
       <span class="store-icon"><svg width="619" height="687" viewBox="0 0 619 687" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -247,6 +260,7 @@
 
   <div class="hero-visual">
     <div class="hero-circle-r"></div>
+    <div class="hero-rect-l"></div>
     <div class="hero-circle-l"></div>
     <img src="assets/hero-foto-pessoa.png" alt="Pessoa usando celular" class="hero-photo"/>
     <div class="tx-cards-wrap">
