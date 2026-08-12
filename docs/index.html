@@ -34,13 +34,13 @@
     /* Wrapper com a proporção exata da foto no Figma (296x239) - garante que a marca d'água escale junto */
     .hero-photo-frame{
       position:relative;
-      width:75%;max-width:340px;
+      width:82.5%;max-width:374px;
       aspect-ratio:296/239;
       margin:0 auto;
     }
     /* Wrapper que ocupa a Hero inteira (até 480px) - ancora a marca d'água na seção toda, não na foto */
     .hero-deco-wrap{position:absolute;top:0;left:50%;transform:translateX(-50%);width:min(100%,480px);height:100%;overflow:visible;pointer-events:none;z-index:1}
-    .marca-dagua{position:absolute;top:-190px;left:-270px;width:1008px;height:1069px;opacity:1}
+    .marca-dagua{position:absolute;top:50%;left:-175px;width:654px;height:694px;transform:translateY(-50%);opacity:1}
     .marca-dagua svg path{fill:#ffffff}
     .marca-dagua svg{width:100%;height:100%;display:block}
     #hero h1{font-size:2.5rem;font-weight:900;line-height:1.05;color:var(--dark);text-align:center;margin-bottom:1rem;position:relative;z-index:1}
@@ -178,19 +178,19 @@
 
     /* Botão flutuante WhatsApp */
     .wa-float{
-      position:fixed;bottom:20px;right:20px;z-index:999;
-      display:flex;align-items:center;gap:.6rem;
+      position:fixed;bottom:16px;right:16px;z-index:999;
+      display:flex;align-items:center;gap:.5rem;
       background:linear-gradient(135deg,#25D366,#1DA851);
       color:white;text-decoration:none;
-      padding:.75rem 1.3rem .75rem .75rem;
+      padding:.55rem 1rem .55rem .55rem;
       border-radius:50px;
       box-shadow:0 6px 20px rgba(0,0,0,.25);
       transition:transform .15s, box-shadow .15s;
-      font-weight:800;font-size:.95rem;
+      font-weight:800;font-size:.8rem;
     }
     .wa-float:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,.3)}
-    .wa-float-icon{width:34px;height:34px;background:white;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-    .wa-float-icon svg{width:20px;height:20px}
+    .wa-float-icon{width:26px;height:26px;background:white;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .wa-float-icon svg{width:15px;height:15px}
     .footer-logo{margin-bottom:.55rem}
     .footer-logo img{height:36px;width:auto}
     .footer-tagline{font-size:.88rem;color:rgba(255,255,255,.6);line-height:1.6;margin-bottom:1.4rem}
