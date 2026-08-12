@@ -169,6 +169,22 @@
 
     /* ── RODAPÉ ── */
     footer{background:var(--dark);padding-top:2.5rem;padding-bottom:2rem;padding-left:max(1.4rem, calc((100% - 480px)/2 + 1.4rem));padding-right:max(1.4rem, calc((100% - 480px)/2 + 1.4rem));text-align:center}
+
+    /* Botão flutuante WhatsApp */
+    .wa-float{
+      position:fixed;bottom:20px;right:20px;z-index:999;
+      display:flex;align-items:center;gap:.6rem;
+      background:linear-gradient(135deg,#25D366,#1DA851);
+      color:white;text-decoration:none;
+      padding:.75rem 1.3rem .75rem .75rem;
+      border-radius:50px;
+      box-shadow:0 6px 20px rgba(0,0,0,.25);
+      transition:transform .15s, box-shadow .15s;
+      font-weight:800;font-size:.95rem;
+    }
+    .wa-float:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,.3)}
+    .wa-float-icon{width:34px;height:34px;background:white;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .wa-float-icon svg{width:20px;height:20px}
     .footer-logo{margin-bottom:.55rem}
     .footer-logo img{height:36px;width:auto}
     .footer-tagline{font-size:.88rem;color:rgba(255,255,255,.6);line-height:1.6;margin-bottom:1.4rem}
@@ -302,7 +318,7 @@
       </div>
     </div>
   </div>
-  <a href="https://play.google.com/store/apps/details?id=com.embarcadero.SmartFlow" class="btn-primary reveal" target="_blank">Baixar agora</a>
+  <a href="#cta" class="btn-primary reveal">Comece agora</a>
 </section>
 
 <!-- ── SEÇÃO 3 ── -->
@@ -348,7 +364,7 @@
     <div class="bubble bubble-2">"<strong>Total de despesas</strong> esse mês?"</div>
     <div class="bubble bubble-3">"Como estão <strong>minhas finanças?</strong>"</div>
   </div>
-  <a href="https://play.google.com/store/apps/details?id=com.embarcadero.SmartFlow" class="btn-primary" style="background:var(--dark)" target="_blank">Baixar agora</a>
+  <a href="#cta" class="btn-primary" style="background:var(--dark)">Comece agora</a>
 </section>
 
 <!-- ── SEÇÃO 5 ── -->
@@ -471,7 +487,6 @@
     <button class="dot" onclick="goTo(4)"></button>
     <button class="dot" onclick="goTo(5)"></button>
   </div>
-  <a href="https://play.google.com/store/apps/details?id=com.embarcadero.SmartFlow" class="btn-primary" style="margin:0 auto;display:block;width:fit-content;padding:.85rem 2.8rem;" target="_blank">Baixar agora</a>
 </section>
 
 <!-- ── SEÇÃO 7 ── -->
@@ -524,27 +539,12 @@
     <img src="assets/footer-logo.png" alt="SmartFlow+"/>
   </div>
   <p class="footer-tagline">Suas finanças organizadas na<br>conversa que você já usa todo dia</p>
-  <div class="footer-social">
-    <a href="#" aria-label="Instagram"><svg width="929" height="929" viewBox="0 0 929 929" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M686.578 868.319V928.9H242.322V868.319H686.578ZM868.319 686.578V242.322C868.319 141.949 786.951 60.5804 686.578 60.5804H242.322C141.949 60.5804 60.5804 141.949 60.5804 242.322V686.578C60.5804 786.951 141.949 868.319 242.322 868.319V928.9L229.859 928.584C101.82 922.098 0 816.229 0 686.578V242.322C0 112.671 101.82 6.80232 229.859 0.315523L242.322 0H686.578C820.409 0 928.9 108.491 928.9 242.322V686.578C928.9 820.409 820.409 928.9 686.578 928.9V868.319C786.951 868.319 868.319 786.951 868.319 686.578Z" fill="white"/>
-<path d="M625.996 464.446C625.996 375.225 553.669 302.898 464.448 302.898C375.228 302.898 302.901 375.225 302.901 464.446C302.901 553.666 375.228 625.993 464.448 625.993V686.574C341.77 686.574 242.32 587.124 242.32 464.446C242.32 341.768 341.77 242.317 464.448 242.317C587.126 242.317 686.577 341.768 686.577 464.446C686.577 587.124 587.126 686.574 464.448 686.574V625.993C553.669 625.993 625.996 553.666 625.996 464.446Z" fill="white"/>
-<path d="M767.352 222.152C767.352 255.609 740.23 282.732 706.772 282.732C673.314 282.732 646.192 255.609 646.192 222.152C646.192 188.694 673.314 161.571 706.772 161.571C740.23 161.571 767.352 188.694 767.352 222.152Z" fill="white"/>
-</svg></a>
-    <a href="#" aria-label="LinkedIn"><svg width="917" height="917" viewBox="0 0 917 917" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M832.807 0H83.2807C37.2681 0 0 37.2681 0 83.2807V832.807C0 878.819 37.2681 916.087 83.2807 916.087H832.807C878.819 916.087 916.087 878.819 916.087 832.807V83.2807C916.087 37.2681 878.819 0 832.807 0ZM289.567 749.526H166.728V354.276H289.567V749.526ZM226.898 297.77C187.298 297.77 155.277 265.665 155.277 226.149C155.277 186.632 187.34 154.569 226.898 154.569C266.373 154.569 298.478 186.674 298.478 226.149C298.478 265.665 266.373 297.77 226.898 297.77ZM749.693 749.526H626.937V557.314C626.937 511.468 626.104 452.506 563.102 452.506C499.184 452.506 489.357 502.432 489.357 553.983V749.526H366.602V354.276H484.444V408.284H486.109C502.516 377.22 542.574 344.449 602.328 344.449C726.707 344.449 749.693 426.314 749.693 532.747V749.526Z" fill="white"/>
-</svg></a>
-  </div>
-  <div class="footer-links">
-    <a href="#">Termos de Uso</a>
-    <span>|</span>
-    <a href="#">Suporte</a>
-  </div>
   <div class="footer-qr">
     <p class="qr-label">Escaneie e baixe agora</p>
     <div class="qr-box">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=130x130&data=https://www.delphinosdev.com/smartflow&bgcolor=021B36&color=ffffff&margin=8" alt="QR Code SmartFlow+" width="120" height="120"/>
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=130x130&data=https://smartflowplus.com.br&bgcolor=021B36&color=ffffff&margin=8" alt="QR Code SmartFlow+" width="120" height="120"/>
     </div>
-    <p class="qr-url">delphinosdev.com/smartflow</p>
+    <p class="qr-url">smartflowplus.com.br</p>
   </div>
   <div class="footer-stores">
     <a href="https://play.google.com/store/apps/details?id=com.embarcadero.SmartFlow" class="btn-store btn-google" style="max-width:250px;margin-bottom:0" target="_blank">
@@ -588,5 +588,14 @@
     dots.forEach((d,j) => d.classList.toggle('active', i===j));
   });
 </script>
+<a href="https://wa.me/5511913157399" class="wa-float" target="_blank" aria-label="Fale conosco pelo WhatsApp">
+  <span class="wa-float-icon">
+    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.71 4.607 1.929 6.464L4 29l7.7-1.9A11.94 11.94 0 0 0 16.001 27C22.629 27 28 21.627 28 15S22.629 3 16.001 3Z" fill="#25D366"/>
+      <path d="M22.1 18.5c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.79-1.68-2.09-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.6-.91-2.2-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z" fill="#fff"/>
+    </svg>
+  </span>
+  Fale Conosco
+</a>
 </body>
 </html>
